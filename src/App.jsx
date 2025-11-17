@@ -3,6 +3,8 @@ import Hero from './components/Hero'
 import Journey from './components/Journey'
 import Technology from './components/Technology'
 import ImpactCTA from './components/ImpactCTA'
+import SketchPV from './components/SketchPV'
+import { SunRayTransition, AtmosphericTransition, PVSketchTransition } from './components/Transitions'
 
 function App() {
   return (
@@ -10,34 +12,15 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <GradientDivider />
+        <SunRayTransition />
         <Journey />
-        <SectionDivider />
+        <AtmosphericTransition />
         <Technology />
-        <SectionDivider subtle />
-        <ImpactCTA />
+        <PVSketchTransition />
+        <SketchPV />
         <Footer />
       </main>
     </div>
-  )
-}
-
-function GradientDivider() {
-  return (
-    <div className="h-20 w-full bg-gradient-to-b from-black to-gray-950" aria-hidden="true" />
-  )
-}
-
-function SectionDivider({ subtle = false }) {
-  return (
-    <div
-      className={
-        subtle
-          ? 'h-24 w-full bg-[radial-gradient(40%_60%_at_50%_100%,rgba(16,185,129,0.15),transparent)]'
-          : 'h-24 w-full bg-[radial-gradient(40%_60%_at_50%_0%,rgba(251,191,36,0.25),transparent)]'
-      }
-      aria-hidden="true"
-    />
   )
 }
 
